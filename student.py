@@ -64,7 +64,7 @@ class Piggy(PiggyParent):
         self.turn_by_deg(90)
       
     def doe(self):
-      deg_fwd(360)
+      self.deg_fwd(360)
       
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
