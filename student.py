@@ -1,4 +1,3 @@
--#!/usr/bin python3
 from teacher import PiggyParent
 import sys
 import time
