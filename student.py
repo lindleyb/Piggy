@@ -1,4 +1,4 @@
-#!/usr/bin python3
+-#!/usr/bin python3
 from teacher import PiggyParent
 import sys
 import time
@@ -41,7 +41,7 @@ class Piggy(PiggyParent):
                 "f": ("Follow", self.follow),
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
-                "v": ("Vanek Test", self.vanek)
+                "v": ("John Doe Test", self.doe)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -64,6 +64,8 @@ class Piggy(PiggyParent):
         self.stop()
         self.turn_by_deg(90)
       
+    def doe(self):
+      pass
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
         # TODO: check to see if it's safe before dancing
