@@ -66,6 +66,8 @@ class Piggy(PiggyParent):
     def doe(self):
       self.deg_fwd(360)
       self.deg_turn(90)
+      self.deg_fwd(360)
+      self.deg_turn(90)
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
         # TODO: check to see if it's safe before dancing
