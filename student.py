@@ -65,8 +65,10 @@ class Piggy(PiggyParent):
       
     def doe(self):
       self.fwd()
+      time.sleep(3)
       self.turn_right(90)
       self.fwd()
+      time.sleep(3)
       self.turn_right(90)
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
