@@ -93,13 +93,13 @@ class Piggy(PiggyParent):
         """A higher-ordered algorithm to make your robot dance"""
         # TODO: check to see if it's safe before dancing
         
-      while true:
-
+      while True:
         # lower-ordered example...
         self.right(primary=50, counter=50)
         time.sleep(2)
         self.stop()
         self.left(primary=50, counter=50)
+        time.sleep(p)
         
 
     def safe_to_dance(self):
