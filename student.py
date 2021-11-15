@@ -69,7 +69,7 @@ class Piggy(PiggyParent):
         self.read_distance()
         if self.read_distance() < 100:
           while True:
-            self.right
+            self.right(primary=90,counter=-90)
 
     def dance(self):
       while True:
