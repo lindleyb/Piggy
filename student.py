@@ -65,7 +65,7 @@ class Piggy(PiggyParent):
       
     def doe(self):
       while True:
-        self.forward()
+        self.fwd()
         self.read_distance()
         if self.read_distance() < 100:
           self.stop()
