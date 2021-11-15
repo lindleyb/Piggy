@@ -64,30 +64,11 @@ class Piggy(PiggyParent):
         self.turn_by_deg(90)
       
     def doe(self):
-      self.fwd()
-      time.sleep(.85)
-      self.stop()
-      self.right()
-      time.sleep(.85)
-      self.stop()
-      self.fwd()
-      time.sleep(.85)
-      self.stop()
-      self.right()
-      time.sleep(.85)
-      self.stop()
-      self.fwd()
-      time.sleep(.85)
-      self.stop()
-      self.right()
-      time.sleep(.85)
-      self.stop()
-      self.fwd()
-      time.sleep(.85)
-      self.stop()
-      self.right()
-      time.sleep(.85)
-      self.stop()
+      while True:
+        self.forward()
+        self.read_distance()
+        if self.read_distance() < 100:
+          self.stop()
 
     def dance(self):
       while True:
