@@ -69,8 +69,12 @@ class Piggy(PiggyParent):
         self.read_distance()
         if self.read_distance() < 100:
           self.right()
-          time.sleep(1.5)
+          time.sleep(0.75)
           self.stop()
+          self.fwd()
+          time.sleep(3)
+          self.left()
+          time.sleep(0.75)
 
     def dance(self):
       while True:
