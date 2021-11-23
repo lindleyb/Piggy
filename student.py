@@ -64,14 +64,16 @@ class Piggy(PiggyParent):
         self.turn_by_deg(90)
       
     def doe(self):
+      stop_distance = 200
+      far_distance = 300
       while True:
         self.fwd()
         self.read_distance()
-        if self.read_distance() < 100:
+        if self.read_distance() < stop_distance:
           self.stop()
           time.sleep(3)
           self.servo(1075)
-          if self.read_distance() > 100:
+          if self.read_distance() > far_distance:
             self.right()
             time.sleep(0.75)
             self.stop()
@@ -79,9 +81,9 @@ class Piggy(PiggyParent):
             time.sleep(3)
             self.left()
             time.sleep(0.75)
-          elif self.read_distance() < 100:
+          elif self.read_distance() < stop_distance:
             self.servo(1875)
-            if self.read_distance() > 100:
+            if self.read_distance() > far_distance:
               self.left()
               time.sleep(0.75)
               self.stop()
