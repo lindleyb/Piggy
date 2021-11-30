@@ -97,10 +97,9 @@ class Piggy(PiggyParent):
               time.sleep(0.75)
 
     def swerve(self):
-      self.stop()
-      
-      #self.left()
-      #time.sleep(.1)
+      self.left()
+      time.sleep(.25)
+      self.fwd()
 
     def intermediate(self):
       stop_distance = 800
