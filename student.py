@@ -41,6 +41,7 @@ class Piggy(PiggyParent):
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
                 "v": ("John Doe Test", self.doe)
+                "i": ("Intermediate Movement", self.intermediate)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -94,6 +95,13 @@ class Piggy(PiggyParent):
               time.sleep(3)
               self.right()
               time.sleep(0.75)
+
+    def intermediate(self):
+      while True:
+        self.fwd()
+        self.servp(1000)
+        self.servo(2000)
+
 
     def dance(self):
       while True:
