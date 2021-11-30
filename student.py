@@ -102,7 +102,7 @@ class Piggy(PiggyParent):
       self.fwd()
 
     def intermediate(self):
-      stop_distance = 600
+      stop_distance = 700
       far_distance = 1000
       self.fwd()
       while True:
