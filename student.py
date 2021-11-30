@@ -99,7 +99,7 @@ class Piggy(PiggyParent):
     def intermediate(self):
       while True:
         self.fwd()
-        self.servp(1000)
+        self.servo(1000)
         self.servo(2000)
 
 
