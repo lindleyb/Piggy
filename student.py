@@ -109,7 +109,11 @@ class Piggy(PiggyParent):
         
         self.servo(1000)
         time.sleep(.25)
+        self.servo(1500)
+        time.sleep(.25)
         self.servo(2000)
+        time.sleep(.25)
+        self.servo(1500)
         time.sleep(.25)
         if self.read_distance() < stop_distance:
           self.swerve()
