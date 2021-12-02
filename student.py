@@ -96,6 +96,38 @@ class Piggy(PiggyParent):
               self.right()
               time.sleep(0.75)
 
+
+    def find_shortest_edge(self):
+      stop_distance = 200
+      far_distance = 300
+      self.servo(self.MIDPOINT)
+      self.fwd()
+      self.read_distance()
+      if self.read_distance() < stop_distance:
+        self.stop()
+        time.sleep(3)
+        self.servo(1000)
+        time.sleep(1)
+        if self.read_distance() > far_distance:
+          self.right()
+          time.sleep(0.75)
+          self.stop()
+          self.fwd()
+          time.sleep(3)
+          self.left()
+          time.sleep(0.75)
+        else:
+          self.servo(2000)
+          time.sleep(1)
+          if self.read_distance() > far_distance:
+            self.left()
+            time.sleep(0.75)
+            self.stop()
+            self.fwd()
+            time.sleep(3)
+            self.right()
+            time.sleep(0.75)
+
     def swerve(self):
       self.left()
       time.sleep(.25)
@@ -109,8 +141,16 @@ class Piggy(PiggyParent):
         
         self.servo(1000)
         time.sleep(.25)
+        if self.read_distance() < stop_distance:
+          self.swerve()
+
         self.servo(1500)
         time.sleep(.25)
+        if self.read_distance() < stop_distance:
+          self.find_shortest_edge()
+
+
+
         self.servo(2000)
         time.sleep(.25)
         self.servo(1500)
