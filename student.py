@@ -65,9 +65,9 @@ class Piggy(PiggyParent):
         self.turn_by_deg(90)
       
     def doe(self):
-      stop_distance = 200
-      far_distance = 300
-      while True:
+        stop_distance = 200
+        far_distance = 300
+      
         self.servo(self.MIDPOINT)
         self.fwd()
         self.read_distance()
@@ -103,35 +103,40 @@ class Piggy(PiggyParent):
       self.servo(self.MIDPOINT)
       self.fwd()
       self.read_distance()
+      #Looking Center
       if self.read_distance() < stop_distance:
         self.stop()
+        self.doe()
         time.sleep(3)
-        self.servo(1000)
-        time.sleep(1)
-        if self.read_distance() > far_distance:
-          self.right()
-          time.sleep(0.75)
-          self.stop()
-          self.fwd()
-          time.sleep(3)
-          self.left()
-          time.sleep(0.75)
-        else:
-          self.servo(2000)
-          time.sleep(1)
-          if self.read_distance() > far_distance:
-            self.left()
-            time.sleep(0.75)
-            self.stop()
-            self.fwd()
-            time.sleep(3)
-            self.right()
-            time.sleep(0.75)
+      
+      self.servo(1000)
+      time.sleep(1)
+      #Looking Left
+      if self.read_distance() < stop_distance:
+        self.stop()
+        self.swerve_right()
+        time.sleep(3)
 
-    def swerve(self):
-      self.left()
-      time.sleep(.25)
-      self.fwd()
+      self.servo(2000)
+      time.sleep(1)
+      #Looking Right
+      if self.read_distance() < stop_distance:
+        self.stop()
+        self.swerve_left()
+        time.sleep(3)
+     
+
+    def swerve_left(self):
+      self.left(primary=80,counter=40)
+      time.sleep(.75)
+      self.right(primary=80,counter=40)
+      time.sleep(.75)
+
+    def swerve_right(self):
+      self.right(primary=80,counter=40)
+      time.sleep(.75)
+      self.left(primary=80,counter=40)
+      time.sleep(.75)
 
     def intermediate(self):
       stop_distance = 700
