@@ -168,15 +168,15 @@ class Piggy(PiggyParent):
       while True:
         self.fwd()
         self.servo(1500)
-        if self.read_distance() < 300:
+        if self.read_distance() < 200:
           self.stop()
-          self.servo(1000)
-          if self.read_distance() > 300:
+          self.servo(2000)
+          if self.read_distance() > 200:
             self.left()
-            time.sleep(.25)
+            time.sleep(.5)
           else:
             self.right()
-            time.sleep(.25)
+            time.sleep(.5)
 
     def dance(self):
       while True:
