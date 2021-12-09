@@ -41,7 +41,8 @@ class Piggy(PiggyParent):
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
                 "v": ("John Doe Test", self.doe),
-                "i": ("Intermediate Movement", self.intermediate)
+                "i": ("Intermediate Movement", self.intermediate),
+                "m": ("Maze", self.maze)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -163,6 +164,18 @@ class Piggy(PiggyParent):
         if self.read_distance() < stop_distance:
           self.swerve_right()
 
+    def maze(self):
+      while True:
+        self.fwd
+        self.servo(1500)
+        if self.read_distance < 500:
+          self.stop
+          self.servo(1000)
+          if self.read_distance > 500:
+            self.left()
+            time.sleep(.25)
+          else:
+            self.fwd
 
     def dance(self):
       while True:
