@@ -173,10 +173,10 @@ class Piggy(PiggyParent):
           self.servo(2000)
           if self.read_distance() > 200:
             self.left()
-            time.sleep(.95)
+            time.sleep(1)
           else:
             self.right()
-            time.sleep(.95)
+            time.sleep(1)
 
     def dance(self):
       while True:
